@@ -1,17 +1,10 @@
 name: Build Geode Mod
-
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
-
+on: [push, workflow_dispatch]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - name: Build Mod
         uses: geode-sdk/build-geode-mod@main
         with:
